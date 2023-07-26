@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NET3LIX</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/media_query.css">
+  <!-- CSS only -->
+  <!--
+    - google font link
+  -->
+  <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+
+<body>
+
+
+
+
+  <!--
+    - main container
+  -->
+  <div class="container">
+
+    <!--
+      - #HEADER SECTION
+    -->
+
+    <header class="">
+      <div class="navbar">
+
+        <!--
+          - menu button for small screen
+        -->
+        <button class="navbar-menu-btn">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </button>
+
+
+        <a style="color: bisque; font-family: monospace; font-size: 2em;" href="index.html" class="navbar-brand">
+          NET3LIX
+        </a>
+
+        <!--
+          - navbar navigation
+        -->
+
+        <nav class="">
+          <ul class="navbar-nav">
+
+            <li> <a href="index.html" class="navbar-link">Home</a> </li>
+            <li> <a href="#category" class="navbar-link">Category</a> </li>
+            <li> <a href="#about" class="navbar-link">About</a> </li>
+            <li> <a href="#contact" class="navbar-link">Contact</a> </li>
+
+          </ul>
+        </nav>
+        <div class="row">
+                          <div class="search-box">
+                    <button class="btn-search"><i class="uil uil-search"></i></button>
+                        <input class="input-search" type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="I'm looking for...">
+                </div>
+
+        </div>
+        <script src="assets/js/search.js"></script>
+
+    </header>
+
+
+
+
+
+    <!--
+      - MAIN SECTION
+    -->
+    <main>
+
+      <!--
+        - #BANNER SECTION
+      -->
+      <section class="banner" id="banner">
+        <div class="banner-card">
+          <a href="player.html">
+          <img src="https://i0.wp.com/flowind.net/wp-content/uploads/2021/09/tileburnedin.png?w=1280&ssl=1" class="banner-img" class="banner-img" alt="">
+
+          <div class="card-content">
+            <div class="card-info">
+
+              <div class="genre">
+                <ion-icon name="film"></ion-icon>
+                <span>Cartoon</span>
+              </div>
+
+              <div class="year">
+                <ion-icon name="calendar"></ion-icon>
+                <span>2005</span>
+              </div>
+
+              <div class="duration">
+                <ion-icon name="time"></ion-icon>
+                <span>2 season</span>
+              </div>
+
+              <div class="quality">FHD</div>
+
+            </div>
+
+            <h2 class="card-title">Ben 10: Classic - season 1</h2>
+          </div>
+        </a>
+        </div>
+      </section>
+
+
+
+
+
+      <!--
+        - #MOVIES SECTION
+      -->
+      <section class="movies">
+
+        <!--
+          - filter bar
+        -->
+        <div class="filter-bar">
+
+          <div class="filter-radios">
+
+            <input type="radio" name="grade" id="featured" checked>
+            <label for="featured">Featured</label>
+
+            <input type="radio" name="grade" id="popular">
+            <label for="popular">Popular</label>
+
+            <input type="radio" name="grade" id="newest">
+            <label for="newest">Newest</label>
+
+            <div class="checked-radio-bg"></div>
+
+          </div>
+        <!--
+          - search and sign-in
+        -->
+
+        </div>
+
+
+        <!--
+          - movies grid
+        -->
+
+        <div class="movies-grid" id="movies-grid">
+          <div class="movie-card" >
+            <a href="#">
+            <div class="card-head">
+              <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoGBxMUExYUFBUWGBYWGSAdGhkaGhoaGRkbHB8aISEhHRshHysiICAoHxwcJDQjKCwuMTExHyE3PDcvOyswMS4BCwsLDw4PHRERHS4oIigwMDAwMDIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMP/AABEIAQYAwAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgEAB//EAEIQAAICAAUCBAQCCAQEBQUAAAECAxEABBIhMQVBEyJRYQYycYGRoRQjQlKxwdHwByRi4RVygvEWM1OSwmOToqOy/8QAGQEAAwEBAQAAAAAAAAAAAAAAAQIDAAQF/8QAKhEAAgIBAwIGAQUBAAAAAAAAAAECESEDEjFBUQQiYXGRoRNCgbHR8DL/2gAMAwEAAhEDEQA/APmUi0ceRdjglYLO/fjFcoqxi9ELKxFiSwYuj4/l64IiWgTwPWv7rGSA5C2VDjsEV7fh/TBcka1z+R/7YhFGOMChrwejhr0N8jnbHJEABIwQsR4A5x3M1vXHbD0JeRSyYiyYJ098QZMJRTcDjHaxNI98WFMCjWDlcRwU0VYgILs7bf3tjUbcVBrx5RviSgY6AMag2TbbHGXFpAA98crBoFkAuJqMekQj7Y4pOCCy9TWLkcDA1YmFxgF7zXipjeO6Rjy7YIC6BfXFcqfTn8sHSRDRQu9u31wT0jpL5iTwUAVgCzOxpUVPnZ27Kvr9u4wziKnkVxxjbBUURa6Fj25/DDYfoSMFSKfMdi5lWBWI7rGI3YA8+Zr9QMMm6TlXgMsHjJKjKGjdkdabVurBVJ47gYyQGzIZmLYY5BDxhrnMlsTRNVe1gA7Cz23IG/esDxQcULvYAck4O3JlLBVKtD69sRyDxAt4ysVKMqhALViKDbsL08139sdzA559N+2KhGQBsaJNNRo1VgHg1Y/EeuM0ZMfdH65k4ZUkbLllCOroFSmJEVMAW2+ViRfJsfMQrnqvx505o5VGSbU0WgMY4Vs0aBIclVB3DCzufKCAcZNeiZnk5eequ/BkqvW9NVXfC7NR71hHBDqdDTI5/JhgDAxBWq0oTxDV23mIKynVYY+IBtdpXNmMto0iMh9CjVoTdhEQTV7frafUNyPSqYTpkEJlTx2dYty5QDXSqxpNW2okBRe1kXtjT/D3Q8hnJJERs6hjheUl/A3VCgI2B3OofngYQcsT5vM5Zww8NlHiEqVRAwjMmrSRqoEIKBBHLA6gQVWdVngIbwlZCZHYDQgpXEdJrDE0hElbHYrxvpenLZDTenqFc3UNfjVYFbL9ObcJ1EgclRAQO+5r0wWjRZA5/JGqy7D9ZGx/VxnyKV1qLa9wCAL77sdyYjO5QSahCdFudPhRk00caqLLV5ZFduAPNsP2RfHk8gRqCdS01d6Yar61xgzpuS6bIGYfpm1cmDj7DAUbDKe1Gdz0kLLGIwQQgDkgKGb1ABJ33uyfahSrUIdv4408/RcmWJSLqTj1jSJlHfchdvocVeF07bbPf/o599ucMkI31M8Izsdv98VhKxpTlunC7/ThR/8AobH6VeOzZPI7XH1HcbeWHfa9tt9sZoyZnRji840By2QqyvUAPcQD+WK48vkCCyx9SYL8zKsLKv8AzECh98AZCaQ77cYnIoC37j87/pgzqUOWqNss0++oOswj1AjTRXRsVIJG+9qfbC2W6+/H4/74boDqP3ZbsEqNx7g9v5403w7ltPTs/IotyEj9fIzjUK9wd/pjLQtG+6kNvvW9HGm+FOtRRSSwT+SHNLoZwSNDb6W9h5jv2NHgYeWVgjHEqFUGX3s1t3rnv/vh7lekSeH42hfDJHm8SMb18tarv25wHN0KfLSEOhKHdZUFxuOxDDbf0O/8caKMn/hvy6LzAouCAfIN+NxsR9jguWFQm127KekdN1I8JSxnA6htJKp4YBiP/wBzV/7RjE9FyrNnMtHR/wDPj1D0AkXV+ABxsup57TKvhSGo1QIQSFJABuvUvZ39cclhgXPjMrIioxMlHVaOVJKkV/6h7bUfbCNP5HjJcdjP/FeUSSSOeJPLnF8RFG5EpNSR+5EhP/uGLfizp6JlsoqUVgeaJ2HDv+qZm+hfXXtWJ9Ez6RwvHJbPDJ4mWP7rkFDv6CxIBsNSe+9/6t8h4RZRIk5cK17o0YBo1V2BteDtePQO9fIP17KS6MlJHKi6Onx+UyKrkKJi1JybXYUN9xhf0HIRtGZmRXJlEQDCwv6uRya4JOkAXtSv3ohh1+KGb9GrMwKIstHFJfiagyFy2keHTbNtvuR25wl6Rm5ogWSiGrWjAMrabrbkEWaIIIs9ibCi2guXVjnM5OJY5pEWKJjHIp1JrjVop8oquqlHKlo52Q6RVg7Deu/4dt/ms43lP+TzBJQUhOuI+TYUvoKG1bDCY9YlkMqtoIlTQRpICL4iyeQKwAJdQSTd1ve+NB/h7F+szIHJyUu1epjwHCouw7/MkgDJ5d36ZIniIgGbQ/rJBGhHhPt5iBfG3+m+2I9E6e8WS6j+tibXHHYikVz/AOYo3CniiR9ziGWnjfprp4ieI2YSTQSbKrGyntV2dhe9Yt+H5UWHNo7ojSIqIp21FXVjwKGw796wXHn3ApcexNIs5/w7KHLGfUss1GPXsbj0WBtzdA7c++OZzp8Ob6q0aMqxTSqpC7BqVfEKAerrIwbjcEXghuoiLJ5bw5tEkbu7Kp84DFCvajZTce++14EzmYRpYuoZZo0YMryQkhTHIpGrQDWqNzv5bI1EewG2vs26+fQZ5DqbzSPyojn0xoNlSNJYAoUdqWr9TZ74W9alM+Qy2Zc/rvEaGVtgZaCsrMe7aaBbk4YfpGT8V548xGiySiVo5NQdCZIncDykSDyORp33ArCLP5gNHl8tE1RRFiXYEB5JCNTUdwqgBVsaqFnc0MuRnVD34jyUOamzU0ShZMtJKMxCv7aozqsyfUgax2NnvbJ+rs/6LkyXe1WajZ2PjNRHp24xZnJniz8mZgkHmmklR1uiruzaWBF0Vaipwy6tJBmDAsS+GpV9SE+WN2YsQprdL3FdjW3GDGLwmJKSttE/8QIcyZs0dZMOpQU8VWHKFbjDkqQwu9Ir77gZnJzHLwZjKykJl4hHPErEGN7bVIyA0yS6rLfW+Dpa/EwiklnmWaNkZtSqCwdr07UVFVub9u+KOjRJFmPHSaNozGweME6n1xkGNkqgBIRudqUHc1g7fKjKdSfYyT+aizXSgDV6AAAX3AFD7Y5Lkb4FD3I3wxzcKqaU2AaF87VeIut0O1Yo0JuK8jlVRdKqAO45/PvizNQjnC9uuxD9+j30GsMtSsuonasaLjwgSUlll3S+pzwg+DNIi/uq7Bf/AGg1eCM11R61zSs3+p3J57Cz+WAXyxGwxN8qDSuoYjcahdfS8auwLvkl/wAQD00ZFeoIODZ5mKDfkUThHmcvpmQqKD2CAKBIFg4adPGoEHGi7BJJU0RyuUZo3kLpUZAYb6rbXp4Wt9Dd/wALwUenzAqCht3WNRqTd3CsoHm7hlN8b74HfMqpaHUg1lWK/tEoHC19nb8fbEs716ZpI6K1HKkikgmmjCKu18eRdu5+uBb6DUnyDL0x3mKCrAJ+YaQqqWJLAkUFBJI/ji3IdKlLfqtLiwAVNAswNKNWkltm8tXscQjz8iyeKtB9xW7KQQVYHUTalSQbJ5xb0/qkkQtVRRrV1UAkI6AhXXUSbFnkkG9waFbJsC5shICZAh0aS2qttIbQTfs5C/Uj1GC6zsXyNLGHRpP1cwQMqIkjE6XG4jdGo70w2xOfrU4h8AEeGysNJF/Nyb5vg/YYCXqUpfWdLfqvB0nVp0GMREUGBBKACwR684D3DrbhlkUMzKsjbickBmkS3IJBvU1jirbbjfcYtzHS5QZPKtwmpPPH5T5tjTGz5GFCztimTOSeHHFS6Y3LrWrliWI+aiLPpfvzd8HWZLnJUf5htcnzfMS52oju7bGxvxtg2xWlyQl6YzxiQVpD6N78zUuwNUNmB3IsBqvSa9lOhZgPNGqeaPaQB4/KNzXzb7q2ws+XEIOrOqvGtaXILE35gpUgHeqBUHixZo0TgvL/ABBMJJZBpufeSwzB/nsUzHykOw08elUK2egVVZBk6FLIFIUeZGdSWUAohbUbLCq0tzXBwRNlFWNCaAe/DJI3Ckg7XdBlIvjbF8PVXQJpC+SN4xer5ZC5bcMDy7bggi8DJmmeMRmtKuXAF/M3fc+m21WALuhg5sTDRdlIrH8scjQA8b/xxdD8u2K2J9KGHJlMri+/1wNG7KTR59MWTKTx/f0xWuWJOAx1RBoTdjBEUdnfBYhIF+2PQpZ2xqNYnNNYYAg8g+mDl0+HoA3C0Lsjj8cUJW22Lletq3wtBkA5H9NkPmZIwtAAoGLEAb/Q+t4ewqxoPRIHzAVv329MC5iNmicKxDFTpI2puR+dYW/D/Up9DeKhYK+kmgGBPqPS9r/3wqe107Gac1aoczRAk+v9/wBcU6JArBCFkI2Jugff3wf4Vi+DiuJACbw5G6E2S+GI0t5CZHO+proH1Avn3OLlgA53+uHM3GFrxnfAUVHgfdKTyyCMMVy4ujiN84tfL8e4/v8AO/wxrRq6gGZi74pQYOngrFSx+g5wRk7Kl3xwpi4REY4yH0xgARTfBEDmv7/hiD98QhJBxhuUErJ646gvjFSx4vj2waFDMu/riUj7YqQY6Df1wxJ8lkMXrghIL7YtyqbfzwbBCBgMKdgbQWtYFVaOGrqN/fC6ZSGwB0hRKpRHkClioNKOScQ6VNIxCzKEkYalA7r/ACIvDpMsBj36EpkWQjzKCB9Gq7/DCOLu7MpqmmgPqHU4svWqyx3AAv8AnhpkJBIiyAEBlB3FHcf0xXmOjRSsrOLK8fT3w2irjGW6/QPl211BWhH44B6o6xxtI3yoLNc7f1xfn4pIfEmMoMQGoRlLYMANlfUOT6jk4yWQkOY8eTORyGEEFSu7RktQVSPmFHj71vgSnXuPHSvN4J9AzE2aeSQsUiUUAtbMeNyOQNyfpixQIpGRZ3dh8wchwDa9hv8AKGH/AGF6rouRjSEeCJNABKpImhyffYEC+5Bx896hNKs0xp4iz6mQkWt137gm6IxGTaSvktGKcn2H2ZzDEXRVQdtvm9SfT6fzw0WNtK6ufw59sIvhvPeLQJJVAWYk8V6n+7r8WuezOieE35JQY/8ArvUv43X3wyf6gakV/wAomZA5YAfIxVh7rV/iCPxxTk5WKpJfmIDWNvMOd/8AmGIZY/5qeJttemRb9DQYev7S7f6TivocgGXNm/CaRT9rf/54G5v7BKCSx3RaslizZsWb53F4jlJdUaSv3XW29eWrO/bbA8r1li4PEdg/9O2CpVC5dlP/AKQQfVyqD/8Aq/tg3XwIlePUGZS18bCz/f1IGOLlu5wfFAAK/adia/0IPN/+Tx/hgyaClUVvzf17fgAf+rFVLNfsI+LXv9ipUrE6wU0G+O+CPTFSVg0aHBuWyXr3xOCIffBqGhgNisnFCoGLwhxWjisQkzgXC2Uiic8eAs2ve8Rk6gd8BZmckYNMYPyjrIoZCGU8FTY/HHROmsoTTdrPPpRwTlspGhJRQurmtgfehtfvhHH0KSbMSSTWENhQDubFbVwBzhG2aKjm+A3JdZhklMCEs4u6+Uaed7wFnfjaGKRowju6mvJpKn13u7G4qu2DPhn4ZTLayDrdjWojfR2H9fXDaHp0cfyIi/8AKoH8MBKbXYNwT4tAzwnMpET5UNOyHk7bA1tz/e2GcWXSNQqAKo4A2wLN1GGGvFkjQnfzMFJ96/ngzJ52KQAo6OCL8rA7eu3bGVJjO2vQtzk8UcZeR1RQNyzAAXxz64zvX4MtmY0kMiC78OW6/pY9sNfino+WzEP+YKoENiQsE0/Vj2Pp/A4+R/pYaSpHAQMAVUnRpBApQvauKxKcqw0W04WrTNTkOnTIjGJ4nD3qUrp9QaZf6d8DzIZYJMuS3jZemAvche6kc7Ht/p9cZ/NZtYJm/Q5pDFyOV+xUimr1IxZ/x52fxrKyqqjUCBrPBvYAAjeq2rnE9yqiuxt2PZOpBjlszq/WL5ZY6sgfKzAA7WrEgccDkHBHSakfNKpUiQ60r/UCrWPr4f4++Mll0aZwoGgftHfTfJJJ7198PspmkjaFldI9Fxs6EkupZW1aBu3B4G2w7ClUguNqhjmcqf0Rlk2KpTVXIYDbE+pq+qCMDZnXWa2Gnzj7kofwxLK5qCaIwF2MszPsAfmZyEqx32O/BxfmWabM5WJG8japBtsdJljIJI280Z9Bv6nFLX8EdjT+WEQxfrWvlUUfTWWb8xoP0wbAVkCm7X2/5iAAeCSAg+pGAYLDZpwKAfdj6aF73Rq6222+uL/h0XHCDqHl1mxR1OWZQfot7f6lPbGWo8V/mw/i78Y+K/sNzMQLMdttthtQoCvsBgYxDBmUctGWqlZjo9Si2NX/AFNqoeig98VzR0Tfbb+zjphJNYOTUg08g6gLZwO2b32xa0TPsOMWxZOtqvDP1AolUCu2LU6ex5w0yqAYsPrhNzKJJISydNOAeoZfSOMaDNSfhhVnHsVWHViykM2ifwz4ekvXlDE6SfqP474WfCv6ZbrmloCtGqi59fMvlYfni3qs5yGUDxjWIdIIcm2BIGxHBs3xWCfhn4jhzSArSyd4yd/qPUYRtblnIyT2ulgZqmIh11BSw1MCQt7kCrr6WMW5KdJLKMGAJUlTYDLsR9RinO9BhkkjmZSJIzaupo/Q+o+uC5dhUu5J+mxu1tGjMByyqSAfqOMZHqGayOXzRSCATZiRqMaKKR/Z/wBg7mwu229Y3WayPixlQ7xt2kQ0ykfxHqDscfOxkh0nMGSdhNPOf1LqaK23naQNsNRIGxO2od7EpyL6cb/o3XUOkDMQCOUbgWDdlHrs35E9xfOPkHUOizJmWR4mlA8pq1IGm7Bo0V5uiPajWPoOc60ZslJKj6Zsu9gllBoaS1UfMPDJPFmhte2KE69lZ42V4HjzMZAaQqN2PyjZtRLdtvqRic2mW04tCB8hHDl5oFhkSYqGV2HnZgR5b43B2A252sb5ecAEv4eoMKavlBobgiq33qhzvzj6F8SDMCHQu+yyIxFUh30saISyaBsU2kAgDGM6b1jLAyeNHICb0ldynO9khtS7Adub9cTlzQ67kP0R5Y9pURVWirltRJAJ06VNCu223JOI9P8AhyQEmQSRnYoVG93t+O1H1r1GLc11eIrUTbVwwo8cHnuO3PO3APzUTPkI5P0ghjmPCkJc6AgjBS6G9a2Bq7vfgYUYadB6Rl8scrmA0mozv4jMDpRY1JUEAEgltLe30BOC+o5pUfp76gFjy7yShNwXZtQSxy3itVc2SPXCo5uOA5jLzSIDGoWlLMGZhGLBKgkqofsD5q7Chel5qHxhIrl6mjkaMBjqpy5C6hqYFqG4G9XQ4IKHrT/5g5Z1ARSfEI4alUvQG+7t+ZrHelZmedZpVB0sdTP6RswCqvqxul/5j+6aEfKNJnWgUhOVmZSshbUpN7kea0ZiaBGldidjpM/00GOHJQuYIS+qaYn59I2WM+i024q2ArdycJJ5GirCEYMdK14UewIPlLKaoeyUfoQOe02y2/rhF1vrypnI8vl9BhR60oLKxxAAR8722o35fm52Jw/6PnDLqDAK4AbRzoVqoFuC++4HHtxi+nqpOu5z6uk2rvglFEBiJj9Bgxod8eCe2Ols5oopjy+1nHmhJ4wUY9sRbjATC0K83FsbwBo1e2HUy7b4DeOvviiZOURhn8gk0bROAVYbj7g4oyXQcvEqhIU8qqBsLOjcEk977++GNY4pwjS5Gt1Qh+E8nJloJGzOhCXeV6NhQdzZG3YnbBHwv8XQ5sEKCrD9lu4urU0LH2BxL4n6TJmYRAkgRWYeIaslBuVH1NfhgXL/AAJlE00H0gEEaj577miCPtWEprC4HuLVvk1cTCsfK/jv4myuZkjDRurReIjh18wsppoqSK2b15x9Ngh0qALoChZJND3O5+pwg/xF6JBmMrJK4AlhRnV+C2gE6G9VNbDseO9pqJ1gbSkk8mA6f1fp4161dTotHKayHtSNidrrsR9eMaL4Q6mNMkbxyHLM1rmdJ/Va7BttF6BQ330GidrwP0B3ycAi6lllaEsfCaVVkVHojS1Asqn94cC67YQfEPxrmZYxCsjJEatA1gAXQDfNX3F7A3QqTZ1I1fXuq5eEtl5p/EK1vGEe0Y6mV9PkDBvMKAHmHABGEfQMizSS5zLhSq61EbjTq1xkMVdvYk6jRO4oA4WdNjyzwF/BcFNm3OhmFGhIW2LKD5QLG59BjURdcW4yieSNdEkYWkoMNNgUBppmr1N7DkchEvxDBlQgmjiR7tXkDlYyw9ADZsEA+UAnexe9/XYkMEWXy8UdTsrNpYlVmhQa9B32ZHDAEmwQbJw1+Il8VCaGia0CqSUZ1GtRueTGSbAAB2s3hBkYQmWlWVzCI5Y5I3UUzaxIHIXnYpFYUCgp9d1YUJs7lmM3hC2kG17WxrWSxHJAO5O4rc+jb4IiRHE+lX0IzP4igqu9KVs77a2uh8oAruX0zJvAM1JO8YnkgKU5KsjSjSDwFCaTXffTsBZwb03pv+T0xlBJPKsSsCrfq02WTY2KUu2/II9RjUZsM+EVEWYViCz51hQb5hqIZGFUFBBLEbkaOa598QzSs+YkidlVW8OKPlS6/M24ssC1BRQBBBpVOB8pnWfMsMvqMMKCGAeI6lpWXSxD6gL8MSEnS1DcLbWSOj9P3lTMNLpyy+IiOqQlI3SV2YvWmy5KeU70WG14DCnQP09PDzQSWTXnMw7O7rZjj1g3sdm8ygb2Dt2G7fIdWWAzK0dFXUA+bW2tVcs92dIRkbV+0War5OWzvVokzkc2VJUPH4bjeR43ZiDV0bIZQGFblgCK20OS6lk3zEjq+vQUdi0gLSSjTGBGlAFVOhV7nyn9ncRtM0kmqNhIMcAxdIMQDb47jg4OFTiqQ9sED1wJO2+AMDshxXKNq5x2VjvWIxLWGEaGQXHQMd1fhiDPhrELRiagYFE+JmTGowF8W9ZfLQM6IWZqRDyod7AL9lUGtydyaxlevdaE0cMMssiZ6IeaMJpRn5pg66SdI2IPJ+mNnnYVmR4ZL0OulgCQSDzuMUdW+HMvmERWUq8QURyg3Imjjzmy30a73+uIzhJltOcVyYTp/WWzMLxsBOsa63iksaKsXEw38t/KxPPpjN5v4YkBLKNUd2dNagp9if4/742XWfgRiTPGyl0YB/DA2IBtgh4va045rm8AdN1qWjkLhDsHVDQ70F83pQo0bHGI13OlV0BPhbOqAcpp1w5laagpeMpuHZSbjN6SzXRAX93HOlQx5fWWHjxBlMjAsI2UEgCPvKAfmJoDgAmsWT5ZZGiRAAZpzHOZbDqv6qtQBChWOogjcsTRBrDn4ty820UwZovEKROu16NIZdQFk3qUlu91em8KOB9F6rA0jKoVmfRJGI1CyRmJww0s9KCioPJwaqq5W9Y6nllg2QtJIJPFJGwYNEURWr5ApbY76gp2pcKesoMtmtUY0qdMmgG/DbkoD+8jggHnYbdsarqmZSbp0kaZeIyRqkhdGBkBJHYA6lCvvR0gOvfAsxZPkdGZmjrV4phJSq1U7/Xdgrkn1Y74nnenpE7hGR08sZKga08mqQg0WalF1Y3NftYl03Ml84s/CJllLOnmCuFks7tVhWahf25wkbPyEZjOMy+ZBHEFBTUoLHUVN0SFB5Pzkd8ZGJPC0SRZeFD4uuUIxZdJKstyGx8o0MvoQO4NHR5zrLywSxQ1JJEqsYzr1MQDpFk0dCKSE9m2J82EPw/PMZxFBCyyrGdChRcVkvatve4Wr7jcHfHOnwpFmMyGH6iNQsjWwaR9rUNyX1MDzyB6ggBOJ8MmOIpLRMri2JK21M11sW70v+ljXGPdE6dBFnstQ1+UMiqSWMgsl5L2WjfFgBfXbAPxdnppXEtaIUOlNLWdemtJ3N/Ky3uNm98CfDeccSqAW1awWcaSQh2ZRfrtQ/e07YHqF5wfZfG1bjcXz6/3646gs7msDLPpUDSFoAUDsNuPtiKSX3x3RTrJwOrGXlA5wJMbxINtWONdY1ABZEx2GA7nFsJ1H6YMBUD6YzMkAtmR9cV6iRgATVti1ZsVSJMuBxLxcCmXHllwRQ7KzE7m7GC8vLZ3wvy0o+mD8uRhJIdC3q76JfEAkic7B180Uo7B64P1H9cfKc91aeSZzq0MSFKpdBl225OqwfNd77HH2HrnS5p4dEUzR1udN2+netSkMvA3F78gjbHxjOZCR8wI9LrI1szMXZjySbO7cHfuTjk1MM7dJ2jT9Eygii8SeVEGaR9auQCBHsp1HcSBm1VW4O9HBPw71KbO/wCTWUOY1Z43kQkO4FeRWPe2tm7GtJ2GM58IfB7ZnMtDMWhEYJclSGsA7URsdjdjauMMI8qMnJ4+XcXAxBDEXR9xYuqJ42Pa9plT3xJ0R50WWNWMoAEiHT4jMtISQKtgQFIF78cjAvwb1V8rMlh1EZIePRvKsu2mzQUcHUxrYGjVYYH4kklkmGhgJBqUIK8Nhp9hY0i6G92d8dny8GWjVTIsmY0s7jyo/BCqCdxficWS3Ony4DCW5vIT/rIoo4hGI9LMZHYhWN6PE8o20raAAAFbBPMo8uZUy0Jh1TsUm0UpVYS7MPEIo+aMLY72uwvDJreNYvMsEKA5llUUXC6ypLGvlobk/PxuKVfCHV3GYzGZcjXQ0b1bubRdJsi9K0O242GMgtmnQFPFzSKya5SgpaHhoUXToA1blWaxYuuLxjep58yvEgVY4SWtlJIWQk7uTuWUKSt7XVfLjZfE3W0gywgVyXhhddN+bWukM5awL1Mw5u7os1DGAzORCqWW2bww5O1vJJIoAFUezmvZe5xgWD5u1TwdxGKZSRVAM25tb1UzD6EYf/4e5ZdVLfzGSzwUUFEBFclm1g3WzCrF4zmbzrmIhzE7mQhlZmaRdAFEU2kruNt7IPvj6D/hv0nTlfGYU03A32jQkKPudT331XhtONyQmpKosdSKTviKocFtCPb+/fEkhIx22cNEIl98dkSqIOCGhFcb4CzigC8ZZC3SOo4vfA+ZzNMd9rF787YqkQ9+2F+dJ+3tth1FE3IEOf39MXQZonCmQXXF1tvtj3iMvzn8AT+eBYXEfiUEc4pTM2dt/UYUR5kHcN9e2Ow9QAYnjGBtNFDNWL483RFH7b4RDPWNhv6gn+GDMsCaJvBFeDXZPN8euMH8RZlYMw+aaLxZ45XCllXQQ1MgVQhplGs6mA5FGwMa/psR55rnHz/4n+JQ3iTRVokKq0cgtvKCS670DuB+1R+wxy61I7PD27Luk9QkmgcwwUzEyyTeIqlL8i6iSLDESCr7tXzEDI5vKOieIrtIqsELUoVJd2YcnUL3VxV78cE9vhqdUUu6GPUr+HGwaw1HUCAF+WqO/O3ehJ8uY1dL5el3BvUARqF2vF6jfHpvjnbOuKzkj0nNu4OXBC+IQLsA7b1dgLdAavS+xOLoyVDgr51DA3dMGIOrb9rYD/p9cA9GzaxvqYA6R3UHuDwfQatx/vh5SMY2BKPpCSMNxE6sSW07EihY1WPOBzRwDIddT6tlo8ukaa9GhNUbD906tid9J8pIG27CjZwJ0eUAxG3VYmeUlhw7AG2H7RVaIu7K++EGblfM5i9yHfyAkmlJP5ADBnVcywUQqLlkYs3fTqI0j0B2BPa9+xxg0O2MeYmhcu5kZwY4ChIESrQcBVtjqS776e14U/EWZg8OSNFYMX8RtRP61dS0AASFILsaU+oJNDDT4LRRnMoiP5E8UK2ndnUgE7eoVSBvQHvWFXXssZs5mVjZXYSULKoNAUAuSe1hRQ57YzMhb0mMy5tCYjMGkUlFJtr3onstmjYoC+Mfcmj0/wB0Ptj4p8KTDL5lDOkugAh/DZlkBB206WBNtpHO97Y+xfD2fjnjcqUDI51xqSxiLWaZuGY8kja7AJqzXSlTIa0bRYx9cVLm9JrEswjH2wBOtY60kzjdoPOZU9/tgHNsSawOslUcAdW6xcbiO9dUedvphkqJye471bOhASxA9u+Mr1nr8jeWMaRXPLH+mISZck25LH03/PERAP8AbCttjxilydjzLKaHf+eLJMy12TqHeuPwwvyqkkX9hxh1Bkdgfbf3xlbKtpcleWiUDYnfDDL5Icm6/hj2Wy/m2/DDfLxDjb+eHSwSlK+CEfT9gR/3wwyMXsBjuXjLbcV+eGceWUVY2wHKgRheQPq/UTloGlRNb7LHGOZHYgACt+5NDsDj5hLmZc1DNrCiWI67oCw5toygHzFhqHp5h3GN98V9dy8LAKwM8e9fN4SllVjXGo6goFG7INKWxgul9RGWnZGbUBKkiyFdXiKoYqGJN6TaGt9xXuOLVe6R36CcYsHyErEwrHI/y+dDdILXzA8EFaNUKJrtgf4iUIdA2Knz735qIXf9qkAUn1vbnB+Yl0OZAVDX4S6PK0vmbU5rsLIo/ur6DCjqwUvJV0D3JJqlHJFmmv05OJcFeQabMalVSqrpFAqoBPux5PbFsGbZgIhZ1tuObaqFD14x1emSMmsROqDcsb22u7oADb09d8Psl03KRqkwmfVyQVVhWmzpIoahtzfP3xgo51gLkljWNlGZCrq8t6PLfkJ/MnksQODa/IIWVpHlK1W4obmy525pQR9ThjkOgjN5gL4jgSObdtLM1KzWWJosaG3a9rGCs70CJIpJJJmHhtpSPylvKo8xC+jkrtfrjGCvgSRY5EMsYCx6gRbXrlEZUc7MWWg12CBtjK9dzNZqRkLDfZuG9Ppe1H137GsfRZ+kLl4MrlfEEskrvM7G7KeGzKDd0Bt99RrfHzrMZMPJpWyTI60eeTXPqa3P07Yxgczl2YC/P8x3Ldr72dwTvj6l/hTloo8m8kcutpW/WDYeHoLAKRzxbWeQw2GPk5BG1U37Qo/z2/7HDzKT+FlPDWZtGYf/ADEYQuyLGQwkUAgUyEAqxolTvQ8rQai7F1FujR9oJFaidsZrrWffcxqBvVnc4n0LPRyZSMQhwkYEdOV1eULuSvl3BB22x6XK3sN/447IZyjlla8rRnZlmckOxYttd7Ad9sUQ5MKdjvjQz9PIGw3xD/hdC/XFFFHNOTwugnkg5P8Af2wtzURF1jSPlv8AtgeXJhhtguIinQviySEjt6e2GjRBRz2wDlFr3AwRF+s2Cmxv9f5Y1FG22FZSNQLJs+nphploBWvgYWZZBp35HHP4H6YdZFAFFjne+2A3gaEVur0DMvDQGCJswqIXc0ii2PYAf3xiEDbgAg4n1PMwxIfHkjRSNxIVogcijz9MSk6HUXZk/jz9HkWCYtYYHS4JAMVK9kftAnSoWuZLokVhX0vocM2V/SLXXGhEYCKu9FgunehWmiTZMg9cZfr3VvEkERj8OFT5FJfZdTMBuSFUFuFWwBWG3UuqNHlPCUqddbLdqhsE87auO+yoccc3uyd+nHbgzMO8ygNqAY78A3yRzsSfw++Ihv1p1DYuwPuDsRf22xzL0XW9qIqtvzxDM2xYj94/mTXfCWNsGWc6oxj/AEdaSM7EAAX5tRF8Gm7+hOK+nOmjwyfM3f0+a7Hcnse1j0wBFGzNpAJvesPclkYk2beXmlrZRzZN19fpxxjNhSXU98L5Z/HjUsRZNWTdEaTt22v3+xvHc3mi7M1cyHym7AZtgDe557dvesAwZxtYlDDyEELxdE7D3/rirLu4fURw5YKx9LO++9fywA2jS9R+JTNnFlK6VjLABuw0aSaFdkB9j98ZvNsTmGKMBT+UmyAL5NWSN779+e9cmfZ5C78tzWwJ0kf71iQrSCu3m59u239N/r2NsFIafEKQOkcsZIZkawoNa1AIXfvyb/1H0wp6bnDHa2FWZNEjhbZY2catO+xKqfqDWG2dyySaSLjUjUpsEB+T9r9P3ge2F8a5cBy4LixpGooQKFggXwTV9wDxjKVA2N8n2/K5GFYhHEixpWyha57/AF9ThfmMvpO2M3/h58ThYFTMyhQtiKRyKYJQKbbhlBQgHcg7WBjRwdUizCCWJtSsTvRBBBogg7jHfpTT4ODWjKMclsTUd6xPMspG34jA8g2G+L41GkXirOVZwLM3l9Is73hfI+x9cNs9Le3px7YT5oG8NkR1eBfGwC0Nz+WCYcyUUgEDVye9exwsyaNpVief5GsdlU1Z4GFL02x50+VdsM1zXl09lNjGXyOf097+vGPZnOkmg1C+5/LAlqJLJXR8NOUlt6mmTqyJ3vf67b8/hgX4qyUOci8SSRwsCMwVQp10CQCD7+hGxIv0SLAUk0uy04sEmr7XeGL59MsgcyAvwApvgXe3Yf0xx6uqmsHfp+DlCdTdHzvqELvbkaUWgAbPPJHOxYk2NtxgUG/UUPXbt/ID8Bg3qnUPGctqIs0FG229k0ADd+m9+2Kky5F3yBtvybH8rxztlVDsAk4JKEg+WgDRO/4c4uTKm7rgfniE7kk6gbvcf74G5Pgb8bWWeQfuE7E1vuPv6c8Yi/7x+/O+/A+n984KybBG8w2JG3t3r+o/ni/qcKKsaArIdJLGjatZJAINEcHGszQrhSiGJ5J7XdC/pgiMsPMRsbAs7X35OxxOPLs3gpRtr09yw83A55sceuIMjhWOqk1kDmrPNYYiyzJdNeQ+TzUw2B3PPBPfY/ng2PIReEysQsgkIC/tigKBrbn8ML8lmmhZWWgwuw260Pb3+u94Nz2dJ8ssYBoGqoAb0B27/wAcBtlIpMMWSJoHjJ/WA2pqtQA4Pe++23tveEOY1OofTQ1VsN72/HasXTQlaLXd/a/7PPti7IojtTqdNGytXqo6TvzRIsel16YF9R9jeC3paZbx1Gt3jI3BBj83C3pfcd7vkjteN/07MKqqsYVVAoAfx9z7nc74+eQKBpUqArcttf8ATtV41uQmYBiVY+XYCzVm724Fd8V8PqbZZ4Bq+F/LClysmjViDvgxJlrf8sZnJdTsCr9/p6++GUOZ1cDHp8o8OWm4SoLlS6wJmkF/TBYnUDm8BZrNr5trsYxPbkyUkpjAF39OMVtmWelJ+3GA5pO2K5JK3xFs70l0QYko4JrHc3FJqBj376lNUfrexwoTNte5wRB1DRvQLev2I4++ISa6nTHUlVRS9xjF0+Q7uwv94sW23sfifXHOoRMsLP4LssjMquDpGla5FGxS8VXJsdxv+OyGvIhvYXqah7aiRX1wRJ11yQrqhB+YFVIr/lqu/p6YhqKOKLaU9WdqXBnY4/2rFDkXvgiOe7G/0/rh2vWIUNDLxEAbHSP4VWJz/Eca0Ey688FuPTcAWfsMSaTKx3RfH2KWjPC364qkhYE6wQas2CDv/XDmL4hQmmgcgbnRIPzJjO33xcPiHIkC8vP/AKv1iEDb9nYfy+uDGCXUGpqyf6fsQulAcnfYVf8AfGOyxgqQFN12VhQ252Pt3/30sHxVkgRrgkK/umONqFbUTIL/AA/26/xXkdWoRTAA8eDEBW3P6364Oz1JvVfYyWVV0YFdVj0B2+9YtdmKopDMsZalKVWogn0PI/j640x+KOnkkiDMC+KWAV61eoD8DgeT4qy4sLl5N/WWFT7mlywANXvgtImpS6IQFZGIchiVoE8/lvY+2L54QVVwpvhr1c3t5eSNOkXY3vD7/wAaZUCv0SZzf7U0a7bclYbPHB2xyT4wSqGTiU9tUjMPuAq3+IwHH1DGclivszjyG9yR69h+GCYI7A0yIFHmJBrf107N37X2wf8A+MZgDpggVuRSyH8/E2/DfHMv8aZgb+HAx9DGx/8AlgOCrDKw1pbsr7O5hIAhtyxVfK6+ZWN8b/KBfpv97DHo6rPEpVXLIoRqAIJAruePQgfXCyb4pkamEcSHVZKRr6ChRB9Cb9/bHp+uTvsZeeKVAR9wLwdKKiympPUnmNL9xmIGjaiCRexFA/0/s4Iy2YkVt1ISwCWFUeaHrYxnJJ2C6hKxbit/v98CTySDS2piAdgSSBdX+ND8Bjq/MuESei6uVPr2NsM8L2ujxicsgO/BxnspmxtwOCRzvt+WCc9niQPTtWLx1bRx6vhkpbo8CSNbBN7gXxz97wJmpvbHsexBvJSCVFKLtZxFz3x7HsKUryl0Ulebudh6DEXzB5x7HsSayUg8EtZq+9j+eICUk/XHsewskNbK2HOKkJx7HsMTZfMtkDFR3++PY9gMB3TVYuVeD647j2AOjkiVud/bF7br9Mex7DIWXUGs73RGOuCNwa7emPY9huhJck4thixWI+3GPY9hUsnTeC1HtSPv+Iv+uCsvVkHdTsR71yMex7GmhtJ2SZCo03xwfzxIPZCnuLv/AGx7HsGDwh5K0/c//9k=" class="banner-img" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+              
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">GAME OF THRONES
+              </h3>
+
+              <div class="card-info">
+                <span class="genre">Drama</span>
+                <span class="year">2011</span>
+              </div>
+            </div>
+          </a>
+          </div>
+
+
+          <div class="movie-card">
+            <a href="#">
+            <div class="card-head">
+              <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQdodPgSefqjeMjBSwRQGknu5qd2vjIYIovPUePaCplC_Vlxk07" class="banner-img" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+              
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Jujutsu kaisen movie
+              </h3>
+
+              <div class="card-info">
+                <span class="genre">Anime</span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+          </a>
+          </div>
+          <div class="movie-card">
+            <a href="#">
+            <div class="card-head">
+              <img src="https://i0.wp.com/flowind.net/wp-content/uploads/2021/09/tileburnedin.png?w=1280&ssl=1" class="banner-img" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+              
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">Ben 10 classic</h3>
+
+              <div class="card-info">
+                <span class="genre">Cartoon</span>
+                <span class="year">2005</span>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/spider-men.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Spider-Man: Homecoming</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2017</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+            <a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/matrix.jpg" class="banner-img" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+              
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <h3 class="card-title">The Matrix Resurrections
+              </h3>
+
+              <div class="card-info">
+                <span class="genre">Sci-fi/Action</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+          </a>
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/eternals.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.8</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Eternals</h3>
+
+              <div class="card-info">
+                <span class="genre">Adventure/Action</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/dune.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.2</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Dune</h3>
+
+              <div class="card-info">
+                <span class="genre">Sci-fi/Adventure</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/1917.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.3</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">1917</h3>
+
+              <div class="card-info">
+                <span class="genre">War/Drama</span>
+                <span class="year">2019</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/shang-chi.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.6</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Shang-Chi and The Legend of The Ten Rings</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Fantasy</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/casino-royale.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.0</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Casino Royale</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2006</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#ml">
+            <div class="card-head">
+              <img src="./assets/images/movies/dark-knight.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>9.0</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">The Dark Knight</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2008</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/panther.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.3</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Black Panther</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2018</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/venom.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.7</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Venom</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2018</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/LOTR.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.9</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Lord Of The Rings: Return Of The King</h3>
+
+              <div class="card-info">
+                <span class="genre">Fantasy/Adventure</span>
+                <span class="year">2003</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/saving-private-ryan.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.6</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Saving Private Ryan</h3>
+
+              <div class="card-info">
+                <span class="genre">War/Action</span>
+                <span class="year">1998</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/interstaller.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.6</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Interstellar</h3>
+
+              <div class="card-info">
+                <span class="genre">Sci-fi/Adventure</span>
+                <span class="year">2014</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/gladiator.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.5</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Gladiator</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2000</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/endgame.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Avengers: Endgame</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Sci-fi</span>
+                <span class="year">2019</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/ww84.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>5.4</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Wonder Woman 1984</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2020</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+<a href="#">
+            <div class="card-head">
+              <img src="./assets/images/movies/captain-marvel.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                <div class="bookmark">
+                  <ion-icon name="bookmark-outline"></ion-icon>
+                </div>
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.8</span>
+                </div>
+
+                <div class="play">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                </div>
+
+              </div>
+            </div>
+</a>
+            <div class="card-body">
+              <h3 class="card-title">Captain Marvel</h3>
+
+              <div class="card-info">
+                <span class="genre">Action/Sci-fi</span>
+                <span class="year">2019</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!--
+          - load more button
+        -->
+        <button class="load-more">LOAD MORE</button>
+
+      </section>
+
+
+
+
+
+      <!--
+        - #CATEGORY SECTION
+      -->
+      <section class="category" id="category">
+
+        <h2 class="section-heading">Category</h2>
+
+        <div class="category-grid">
+
+          <div class="category-card">
+            <img src="./assets/images/action.jpg" alt="" class="card-img">
+            <div class="name">Action</div>
+            <div class="total">100</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./assets/images/comedy.jpg" alt="" class="card-img">
+            <div class="name">Comedy</div>
+            <div class="total">50</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./assets/images/thriller.webp" alt="" class="card-img">
+            <div class="name">Thriller</div>
+            <div class="total">20</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./assets/images/horror.jpg" alt="" class="card-img">
+            <div class="name">Horror</div>
+            <div class="total">80</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./assets/images/adventure.jpg" alt="" class="card-img">
+            <div class="name">Adventure</div>
+            <div class="total">100</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./assets/images/animated.jpg" alt="" class="card-img">
+            <div class="name">Animated</div>
+            <div class="total">50</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./assets/images/crime.jpg" alt="" class="card-img">
+            <div class="name">Crime</div>
+            <div class="total">20</div>
+          </div>
+
+          <div class="category-card">
+            <img src="./assets/images/sci-fi.jpg" alt="" class="card-img">
+            <div class="name">SCI-FI</div>
+            <div class="total">80</div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+
+
+
+      </section>
+
+    </main>
+
+
+
+
+
+    <!--
+      - FOOTER SECTION
+    -->
+    <footer>
+
+      <div class="footer-content">
+
+  
+
+      </div>
+
+      <div class="footer-copyright">
+
+        <div class="copyright">
+          <p>&copy; Copyright 2022 BRAVEFLIX</p>
+        </div>
+
+        <div class="wrapper">
+          <a href="#">ALI RCHAM {}</a>
+          <a href="#">Terms and conditions</a>
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/main.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
